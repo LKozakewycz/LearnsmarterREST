@@ -47,6 +47,32 @@ Write a snippet of HTML code for which you want to repeat for each course record
 </table>
 ```
 
+
+## Retrieving courses
+
+To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify what the course ID is.
+
+```javascript
+var courseId = 'COURSE_ID';
+
+$(document).LearnsmarterREST('getEvents', {
+	'courseId' : courseId
+});
+```
+
+Write a snippet of HTML code for which you want to repeat for each scheduled course record and add the attribute `ls-repeat` with a value of `events` and hide the tag you are repeating.
+
+```html
+<table>
+	<tr ls-repeat="events" style="display:none;">
+		<td>{!lsc__StartDate__c}</td>
+		<td>{!lsc__Venue__r.Name}</td>
+		<td>{!lsc__SellingPrice__c}</td>
+	</tr>
+</table>
+```
+
+
 The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag. The above snippet will give you a list of courses in a table with the costs.
 
 

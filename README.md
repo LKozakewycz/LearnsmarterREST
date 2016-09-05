@@ -4,19 +4,24 @@ A REST SDK to simplify integration with Learnsmarter Engage widgets. This SDK ca
 **Please note** that the REST SDK for JavaScript exposes your REST API URL (which is not a security concern, but may not be so practical for some clients). It also does not allow your content to be search engine optimized as your content is loaded post server-side. We recommend that long-term usage should resort to using server-side languages such as Java, PHP or Node.js.
 
 ## Table of Contents
-[Dependencies](#depedencies)
-[How to install](#howtoinstall) 
+* [Dependencies](#dependencies)
+* [How to install](#how-to-install)
+* [Configuring](#configuring)
+* [Retrieving courses](#retrieving-courses)
+* [Retrieving scheduled courses](#retrieving-scheduled-courses)
+* [Version History](#version-history)
 
 <a name="dependencies"/>
 ## Dependencies
 - jQuery
 - moment.js (only required for date formatting)
 
-<a name="howtoinstall"/>
+<a name="how-to-install"/>
 ## How to install
 - Download either development or minified version of script from `dist/` folder.
 - Include JS in your page
 
+<a name="configuring" />
 ## Configuring
 
 Using the setup guide, create `Course REST` widget that will include the course and scheduled course fields you want to retrieve.
@@ -34,6 +39,7 @@ $(function(){
 </script>
 ```
 
+<a name="retrieving-courses" />
 ## Retrieving courses
 
 To retrieve a list of courses, add the following JavaScript code:
@@ -60,6 +66,7 @@ Write a snippet of HTML code for which you want to repeat for each course record
 ```
 
 
+<a name="retrieving-scheduled-courses" />
 ## Retrieving scheduled courses
 
 To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify what the course ID is.
@@ -94,6 +101,7 @@ Write a snippet of HTML code for which you want to repeat for each scheduled cou
 The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag. The above snippet will give you a list of courses in a table with the costs.
 
 
+<a name="version-history" />
 ## Version History
 
 

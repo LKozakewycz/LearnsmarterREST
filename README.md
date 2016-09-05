@@ -111,7 +111,7 @@ The SDK will locate this tag, repeat it for each record and parse the variables 
 
 <a name="basic-field-references" />
 ## Basic field references
-Basic field references are a simple way to pull field values into your HTML. These cannot be formatted. If you want to format your field values, use the attribute field references.
+Basic field references are a simple way to pull field values into your HTML. These cannot be formatted. If you want to format your field values, use the attribute field references. Please also note that all basic field references are escaped. If you want to display unescaped values, use attribute field references.
 
 To add a field into your HTML, write the field name like so:
 
@@ -128,7 +128,7 @@ To add a field into your HTML, write the field name like so:
 ## Attribute field references
 Referenceing fields via tag attributes allow you to define formats or the object you are referring to.
 
-To reference a field in a repeat tag, the following snipped will populate the inner div field with the start date of the scheduled course.
+To reference a field in a repeat tag, the following snippet will populate the inner div field with the start date of the scheduled course.
 
 ```html
 <div ls-repeat="events">

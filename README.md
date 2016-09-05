@@ -61,6 +61,9 @@ Here is a list of options you can use.
 | Option Key | Type | Required | Description 			|
 | ---------- | ---- | -------- | ---------------------- |
 | areaId     | Id   | No	   | Parent subject area id |
+| beforeRender | Function | No | Function to execute before auto render |
+| callback | Function | No | Callback function to invoke after auto render or if auto render disabled |
+| autoRender | Boolean | No | Defaults to true. Will auto render HTML |
 
 Write a snippet of HTML code for which you want to repeat for each course record and add the attribute `ls-repeat` with a value of `courses` and hide the tag you are repeating.
 
@@ -80,11 +83,9 @@ Write a snippet of HTML code for which you want to repeat for each course record
 To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify the course ID and specify it in the options parameter.
 
 ```javascript
-var courseId = 'COURSE_ID';
-
 // Get courses from specified course id
 $(document).LearnsmarterREST('getEvents', {
-	'courseId' : courseId
+	'courseId' : 'COURSE_ID'
 });
 ```
 
@@ -93,6 +94,9 @@ Here is a list of options you can use.
 | Option Key | Type | Required  | Description 		 |
 | ---------- | ---- | --------- | ------------------ |
 | courseId   | Id   | Yes 		| Parent course ID 	 | 
+| beforeRender | Function | No | Function to execute before auto render |
+| callback | Function | No | Callback function to invoke after auto render or if auto render disabled |
+| autoRender | Boolean | No | Defaults to true. Will auto render HTML |
 
 Write a snippet of HTML code for which you want to repeat for each scheduled course record and add the attribute `ls-repeat` with a value of `events` and hide the tag you are repeating.
 

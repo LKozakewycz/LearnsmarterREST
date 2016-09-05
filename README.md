@@ -36,6 +36,12 @@ To retrieve a list of courses, add the following JavaScript code:
 $(document).LearnsmarterREST('getCourses');
 ```
 
+A second parameter can be used to specify options. Here is a list of options you can use.
+
+| Option Key | Type | Description 		|
+| ---------- | ---- | ----------------- |
+| areaId     | Id   | Subject area id 	|
+
 Write a snippet of HTML code for which you want to repeat for each course record and add the attribute `ls-repeat` with a value of `courses` and hide the tag you are repeating.
 
 ```html
@@ -59,6 +65,12 @@ $(document).LearnsmarterREST('getEvents', {
 	'courseId' : courseId
 });
 ```
+
+A second parameter can be used to specify options. Here is a list of options you can use.
+
+| Option Key | Type | Description 		|
+| ---------- | ---- | ----------------- |
+| courseId   | Id   | Course id 		|
 
 Write a snippet of HTML code for which you want to repeat for each scheduled course record and add the attribute `ls-repeat` with a value of `events` and hide the tag you are repeating.
 

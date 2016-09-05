@@ -11,6 +11,26 @@ A REST SDK to simplify integration with Learnsmarter Engage widgets. This SDK ca
 - Download either development or minified version of script from `dist/` folder.
 - Include JS in your page
 
+## Configuring
+
+Using the setup guide, create `Course REST` widget that will include the course and scheduled course fields you want to retrieve.
+
+On your HTML web page, add the following to the bottom of your body tag and adjust the JavaScript accordingly to include your widget URL and path to SDK file.
+
+```html
+<script type="text/javascript" src="js/learnsmarter.rest.js"></script>
+<script>
+$(function(){
+    $(document).LearnsmarterREST({
+        url : 'https://example.na37.force.com/public/services/apexrest/lsi/widget/WIDGET_NAME'
+    });
+});
+</script>
+```
+
+
+
+
 
 ## Version History
 

@@ -38,9 +38,9 @@ $(document).LearnsmarterREST('getCourses');
 
 A second parameter can be used to specify options. Here is a list of options you can use.
 
-| Option Key | Type | Description 		|
-| ---------- | ---- | ----------------- |
-| areaId     | Id   | Subject area id 	|
+| Option Key | Type | Required | Description 			|
+| ---------- | ---- | -------- | ---------------------- |
+| areaId     | Id   | No	   | Parent subject area id |
 
 Write a snippet of HTML code for which you want to repeat for each course record and add the attribute `ls-repeat` with a value of `courses` and hide the tag you are repeating.
 
@@ -68,9 +68,9 @@ $(document).LearnsmarterREST('getEvents', {
 
 A second parameter can be used to specify options. Here is a list of options you can use.
 
-| Option Key | Type | Description 		|
-| ---------- | ---- | ----------------- |
-| courseId   | Id   | Course id 		|
+| Option Key | Type | Required  | Description 		 |
+| ---------- | ---- | --------- | ------------------ |
+| courseId   | Id   | Yes 		| Parent course ID 	 | 
 
 Write a snippet of HTML code for which you want to repeat for each scheduled course record and add the attribute `ls-repeat` with a value of `events` and hide the tag you are repeating.
 

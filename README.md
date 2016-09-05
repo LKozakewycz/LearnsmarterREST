@@ -3,7 +3,7 @@ A REST SDK to simplify integration with Learnsmarter Engage widgets. This SDK ca
 
 **Please note** that the REST SDK for JavaScript exposes your REST API URL (which is not a security concern, but may not be so practical for some clients). It also does not allow your content to be search engine optimized as your content is loaded post server-side. We recommend that long-term usage should resort to using server-side languages such as Java, PHP or Node.js.
 
-## Pre-requisites
+## Dependencies
 - jQuery
 - moment.js (only required for date formatting)
 

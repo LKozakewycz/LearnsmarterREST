@@ -48,7 +48,7 @@ Write a snippet of HTML code for which you want to repeat for each course record
 ```
 
 
-## Retrieving courses
+## Retrieving scheduled courses
 
 To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify what the course ID is.
 

@@ -152,6 +152,15 @@ All field values are escaped by default. If you want to make sure your data is n
 <div ls-field="lsc__LongDetail__c" ls-escape="false"></div>
 ```
 
+| Attribute | Description |
+| --------- | ----------- |
+| ls-repeat | Specifies object to repeat over |
+| ls-field | Specifies field to populate tag with |
+| ls-object | Specifies object to pull fields from |
+| ls-format | Specifies date format (requires moment.js) |
+| ls-escape | Specifies whether to escape field value (defaults to true) |
+
+
 <a name="version-history" />
 ## Version History
 

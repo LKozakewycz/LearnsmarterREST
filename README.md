@@ -47,7 +47,7 @@ Write a snippet of HTML code for which you want to repeat for each course record
 </table>
 ```
 
-The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag.
+The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag. The above snippet will give you a list of courses in a table with the costs.
 
 
 ## Version History

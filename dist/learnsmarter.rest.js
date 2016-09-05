@@ -315,10 +315,7 @@
 	};
 
 /**
- * @description	: 	Clone a function
- *
- * @param		object							option object
- * @param		string							option key
+ * @description	: 	Clone a function prototype function
  */
 	Function.prototype.clone = function() {
 	    var that = this;

@@ -22,14 +22,32 @@ On your HTML web page, add the following to the bottom of your body tag and adju
 <script>
 $(function(){
     $(document).LearnsmarterREST({
-        url : 'https://example.na37.force.com/public/services/apexrest/lsi/widget/WIDGET_NAME'
+        url : 'https://SUBDOMAIN.INSTANCE.force.com/public/services/apexrest/lsi/widget/WIDGET_NAME'
     });
 });
 </script>
 ```
 
+## Retrieving courses
 
+To retrieve a list of courses, add the following JavaScript code:
 
+```javascript
+$(document).LearnsmarterREST('getCourses');
+```
+
+Write a snippet of HTML code for which you want to repeat for each course record and add the attribute `ls-repeat` with a value of `courses` and hide the tag you are repeating.
+
+```html
+<table>
+	<tr ls-repeat="courses">
+		<td>{!Name}</td>
+		<td>{!lsc__Cost__c}</td>
+	</tr>
+</table>
+```
+
+The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag.
 
 
 ## Version History

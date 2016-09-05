@@ -40,7 +40,7 @@ Write a snippet of HTML code for which you want to repeat for each course record
 
 ```html
 <table>
-	<tr ls-repeat="courses">
+	<tr ls-repeat="courses" style="display:none;">
 		<td>{!Name}</td>
 		<td>{!lsc__Cost__c}</td>
 	</tr>

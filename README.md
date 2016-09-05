@@ -9,6 +9,8 @@ A REST SDK to simplify integration with Learnsmarter Engage widgets. This SDK ca
 * [Configuring](#configuring)
 * [Retrieving courses](#retrieving-courses)
 * [Retrieving scheduled courses](#retrieving-scheduled-courses)
+* [Basic field references](#basic-field-references)
+* [Attribute field references](#attribute-field-references)
 * [Version History](#version-history)
 
 <a name="dependencies"/>
@@ -42,13 +44,19 @@ $(function(){
 <a name="retrieving-courses" />
 ## Retrieving courses
 
-To retrieve a list of courses, add the following JavaScript code:
+To retrieve a list of courses, add the following JavaScript code. A second optional paramater can be used to specify options.
 
 ```javascript
+// Get all courses
 $(document).LearnsmarterREST('getCourses');
+
+// Get courses from specified subject area
+$(document).LearnsmarterREST('getCourses', {
+	'areaId' : 'AREA_ID'
+});
 ```
 
-A second parameter can be used to specify options. Here is a list of options you can use.
+Here is a list of options you can use.
 
 | Option Key | Type | Required | Description 			|
 | ---------- | ---- | -------- | ---------------------- |
@@ -69,17 +77,18 @@ Write a snippet of HTML code for which you want to repeat for each course record
 <a name="retrieving-scheduled-courses" />
 ## Retrieving scheduled courses
 
-To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify what the course ID is.
+To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify the course ID and specify it in the options parameter.
 
 ```javascript
 var courseId = 'COURSE_ID';
 
+// Get courses from specified course id
 $(document).LearnsmarterREST('getEvents', {
 	'courseId' : courseId
 });
 ```
 
-A second parameter can be used to specify options. Here is a list of options you can use.
+Here is a list of options you can use.
 
 | Option Key | Type | Required  | Description 		 |
 | ---------- | ---- | --------- | ------------------ |
@@ -100,6 +109,44 @@ Write a snippet of HTML code for which you want to repeat for each scheduled cou
 
 The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag. The above snippet will give you a list of courses in a table with the costs.
 
+<a name="basic-field-references" />
+## Basic field references
+Basic field references are a simple way to pull field values into your HTML. These cannot be formatted. If you want to format your field values, use the attribute field references.
+
+To add a field into your HTML, write the field name like so:
+
+```html
+<!-- Simple field reference -->
+<div>{!lsc__StartDate__c}</div>
+
+<!-- Lookup field reference -->
+<div>{!lsc__Venue__r.lsc__Location__r.Name}</div>
+```
+
+
+<a name="attribute-field-references" />
+## Attribute field references
+Referenceing fields via tag attributes allow you to define formats or the object you are referring to.
+
+To reference a field in a repeat tag, the following snipped will populate the inner div field with the start date of the scheduled course.
+
+```html
+<div ls-repeat="events">
+	<div ls-field="lsc__StartDate__c"></div>
+</div>
+```
+
+If you want to format your date, include `moment.js` on your page and use the `ls-format` attribute like so:
+
+```html
+<div ls-field="lsc__StartDate__c" ls-format="DD MMMM YYYY"></div>
+```
+
+All field values are escaped by default. If you want to make sure your data is not escaped (for instance, when you are displaying rich text), use the `ls-escape` attribute:
+
+```html
+<div ls-field="lsc__LongDetail__c" ls-escape="false"></div>
+```
 
 <a name="version-history" />
 ## Version History

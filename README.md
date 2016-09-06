@@ -60,7 +60,7 @@ Here is a list of options you can use.
 
 | Option Key | Type | Required | Description 			|
 | ---------- | ---- | -------- | ---------------------- |
-| areaId     | Id   | No	   | Parent subject area id |
+| courseAreaId | Id   | No	   | Parent subject area id |
 | beforeRender | Function | No | Function to execute before auto render |
 | callback | Function | No | Callback function to invoke after auto render or if auto render disabled |
 | autoRender | Boolean | No | Defaults to true. Will auto render HTML |

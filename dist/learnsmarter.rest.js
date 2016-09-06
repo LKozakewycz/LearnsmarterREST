@@ -5,6 +5,8 @@
 		container : null
 	};
 
+	var renderData;
+
 	var methods = {
 		init : function(initConfig) {
 			config = $.extend({}, config, initConfig)
@@ -61,6 +63,8 @@
 	 */
 		autoRender : function($this, data) {
 			var container;
+
+			renderData = data;
 
 			$($this).find('[ls-object]').each(function(){
 				renderObjectFields($(this), data);
@@ -202,11 +206,18 @@
 
 		// Find each field reference directly
 		var html = ''+newDom.html();
-		var vm = html.match(/{!([a-zA-Z_\.]+)}/gi);
+		var vm = html.match(/{!([\$0-9a-zA-Z_\.]+)}/gi);
 
 		if ( vm != null ) {
 			for ( var x=0; x<vm.length; x++ ) {
-				var fieldVal = getFieldValue($data, vm[x].substring(2, vm[x].length-1));
+				var fieldName = vm[x].substring(2, vm[x].length-1);
+				var dataObject = fieldName.indexOf('$') === 0 ? renderData : $data;
+
+				if ( fieldName.indexOf('$') === 0 ) {
+					fieldName = fieldName.substring(1);
+				}
+
+				var fieldVal = getFieldValue(dataObject, fieldName);
 				var escapedVal = $('<span/>').text(fieldVal).text();
 
 				html = html.replace(vm[x], escapedVal);

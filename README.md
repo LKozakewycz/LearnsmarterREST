@@ -52,7 +52,7 @@ $(document).LearnsmarterREST('getCourses');
 
 // Get courses from specified subject area
 $(document).LearnsmarterREST('getCourses', {
-	'areaId' : 'AREA_ID'
+	'courseAreaId' : 'COURSE_AREA_ID'
 });
 ```
 

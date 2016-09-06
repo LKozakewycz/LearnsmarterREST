@@ -127,10 +127,21 @@ To add a field into your HTML, write the field name like so:
 <div>{!lsc__Venue__r.lsc__Location__r.Name}</div>
 ```
 
+Use the dollar (`$`) notation to refer to a field on the top level object. For example, you would use this if repeating through scheduled courses and you require the URL to add the item to your basket.
+
+```html
+<div ls-repeat="events">
+	<div ls-field="lsc__StartDate__c"></div>
+	<div>
+		<a href="{!$addToBasketUrl}?id={!Id}"></a>
+	</div>
+</div>
+```
+
 
 <a name="attribute-field-references" />
 ## Attribute field references
-Referenceing fields via tag attributes allow you to define formats or the object you are referring to.
+Referencing fields via tag attributes allow you to define formats or the object you are referring to.
 
 To reference a field in a repeat tag, the following snippet will populate the inner div field with the start date of the scheduled course.
 
@@ -152,11 +163,20 @@ All field values are escaped by default. If you want to make sure your data is n
 <div ls-field="lsc__LongDetail__c" ls-escape="false"></div>
 ```
 
+If you wanted to get a value from a specific object within the JSON response, specify the `ls-object` field in the parent tag. For example, if your widget returns course fields as well as a list of scheduled course for that course, you can get the course fields using the following:
+
+```html
+<div ls-object="course">
+	<div ls-field="Name"></div>
+</div>
+```
+
+
 | Attribute | Description |
 | --------- | ----------- |
 | ls-repeat | Specifies object to repeat over |
 | ls-field | Specifies field to populate tag with |
-| ls-object | Specifies object to pull fields from |
+| ls-object | Specifies object to pull fields from (set to blank for top level) |
 | ls-format | Specifies date format (requires moment.js) |
 | ls-escape | Specifies whether to escape field value (defaults to true) |
 
@@ -167,5 +187,6 @@ All field values are escaped by default. If you want to make sure your data is n
 
 | Version   | Notes                    |
 | --------- | ------------------------ |
+| 1.0.2     | Use dollar notation to retrieve top level object fields |
 | 1.0.1     | Fix for sort order on repeat / top level object access |
 | 1.0       | REST SDK Release         |

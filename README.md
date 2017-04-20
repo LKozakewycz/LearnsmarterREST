@@ -14,17 +14,17 @@ A REST SDK to simplify integration with Learnsmarter Engage widgets. This SDK ca
 * [Version History](#version-history)
 * [TODO](#todo)
 
-<a name="dependencies"/>
+<a name="dependencies"></a>
 ## Dependencies
 - jQuery
 - moment.js (only required for date formatting)
 
-<a name="how-to-install"/>
+<a name="how-to-install"></a>
 ## How to install
 - Download either development or minified version of script from `dist/` folder.
 - Include JS in your page
 
-<a name="configuring" />
+<a name="configuring"></a>
 ## Configuring
 
 Using the setup guide, create `Course REST` widget that will include the course and scheduled course fields you want to retrieve.
@@ -42,7 +42,7 @@ $(function(){
 </script>
 ```
 
-<a name="retrieving-courses" />
+<a name="retrieving-courses"></a>
 ## Retrieving courses
 
 To retrieve a list of courses, add the following JavaScript code. A second optional paramater can be used to specify options.
@@ -78,7 +78,7 @@ Write a snippet of HTML code for which you want to repeat for each course record
 ```
 
 
-<a name="retrieving-scheduled-courses" />
+<a name="retrieving-scheduled-courses"></a>
 ## Retrieving scheduled courses
 
 To retrieve a list of scheduled courses within a course, add the following JavaScript code. Adjust how you identify the course ID and specify it in the options parameter.
@@ -114,7 +114,7 @@ Write a snippet of HTML code for which you want to repeat for each scheduled cou
 
 The SDK will locate this tag, repeat it for each record and parse the variables automatically. It will then destroy the original tag. The above snippet will give you a list of courses in a table with the costs.
 
-<a name="basic-field-references" />
+<a name="basic-field-references"></a>
 ## Basic field references
 Basic field references are a simple way to pull field values into your HTML. These cannot be formatted. If you want to format your field values, use the attribute field references. Please also note that all basic field references are escaped. If you want to display unescaped values, use attribute field references.
 
@@ -140,7 +140,7 @@ Use the dollar (`$`) notation to refer to a field on the top level object. For e
 ```
 
 
-<a name="attribute-field-references" />
+<a name="attribute-field-references"></a>
 ## Attribute field references
 Referencing fields via tag attributes allow you to define formats or the object you are referring to.
 
@@ -182,7 +182,7 @@ If you wanted to get a value from a specific object within the JSON response, sp
 | ls-escape | Specifies whether to escape field value (defaults to true) |
 
 
-<a name="version-history" />
+<a name="version-history"></a>
 ## Version History
 
 
@@ -192,6 +192,6 @@ If you wanted to get a value from a specific object within the JSON response, sp
 | 1.0.1     | Fix for sort order on repeat / top level object access |
 | 1.0       | REST SDK Release         |
 
-<a name="todo" />
+<a name="todo"></a>
 ## TODO
 - Pagination support
